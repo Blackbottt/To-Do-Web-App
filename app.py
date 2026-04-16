@@ -8,7 +8,7 @@ def home():
 
 @app.route("/tasks")
 def get_tasks():
-    return []
+    return ["coming soon"]
 
 if __name__ == "__name__":
     app.run(debug=True)
