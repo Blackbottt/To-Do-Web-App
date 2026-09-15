@@ -36,6 +36,15 @@ async function addTask() {
     }
 }
 
+async function toggleTask(taskId) {
+    // Here you would typically send a request to your backend to toggle the task's completion status
+    console.log("Toggling task:", taskId);
+    await fetch(`/tasks/${taskId}/toggle`, {
+        method: 'POST'
+    });
+    loadTasks();
+}
+
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     await addTask();
