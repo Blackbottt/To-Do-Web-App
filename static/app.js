@@ -14,7 +14,7 @@ async function loadTasks() {
 
 loadTasks();
 const taskForm = document.getElementById('task-form');
-const task = document.getElementById('task-title');
+const task = document.getElementById('task-title').value.trim();
 
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
