@@ -31,6 +31,8 @@ async function addTask() {
             },
             body: JSON.stringify({ title: taskTitle })
         });
+        taskTitleInput.value = '';
+        loadTasks();        
     }
 }
 
