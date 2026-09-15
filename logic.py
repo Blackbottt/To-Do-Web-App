@@ -3,7 +3,7 @@ tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 def get_tasks():
     return tasks
 def add_task(title):
-    if len(tasks) == 0:
+    if not tasks:
         task_id = 1
     else:
         task_id = max(task['task_id'] for task in tasks) + 1
