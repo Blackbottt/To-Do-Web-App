@@ -36,7 +36,7 @@ async function addTask() {
     }
 }
 
-taskForm.addEventListener('submit', (e) => {
+taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    addTask();
+    await addTask();
 });
