@@ -4,6 +4,9 @@ async function loadTasks() {
     console.log("1", tasks);
     const taskList = document.getElementById('task-list');
     const taskForm = document.getElementById('task-form');
+    taskForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
     const task = document.getElementById('task-title');
     taskList.innerHTML = '';
     
