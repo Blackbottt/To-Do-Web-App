@@ -10,6 +10,7 @@ async function loadTasks() {
     
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
+        taskItem.classList.add('task-item');
         taskItem.textContent = task.title;
         taskList.appendChild(taskItem);
     });
@@ -42,8 +43,10 @@ async function toggleTask(taskId) {
     await fetch(`/tasks/${taskId}/toggle`, {
         method: 'POST'
     });
+    
     loadTasks();
 }
+
 
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
