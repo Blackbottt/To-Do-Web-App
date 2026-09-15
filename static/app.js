@@ -22,7 +22,7 @@ async function loadTasks() {
     });
 }
 
-loadTasks();
+await loadTasks();
 
 async function addTask() {
     const taskTitle = taskTitleInput.value.trim();
@@ -38,7 +38,7 @@ async function addTask() {
             body: JSON.stringify({ title: taskTitle })
         });
         taskTitleInput.value = '';
-        loadTasks();        
+        await loadTasks();        
     }
 }
 
@@ -49,7 +49,7 @@ async function toggleTask(taskId) {
         method: 'POST'
     });
     
-    loadTasks();
+    await loadTasks();
 }
 
 taskForm.addEventListener('submit', async (e) => {
