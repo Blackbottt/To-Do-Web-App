@@ -10,6 +10,9 @@ async function loadTasks() {
     
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
+        if (task.completed) {
+            taskItem.classList.add('completed');
+        }
         taskItem.classList.add('task-item');
         taskItem.textContent = task.title;
         taskList.appendChild(taskItem);
