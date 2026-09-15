@@ -1,5 +1,5 @@
 from flask import Flask
-
+from logic import get_tasks
 app = Flask(__name__)
 
 @app.route("/")
@@ -8,7 +8,8 @@ def home():
 
 @app.route("/tasks")
 def get_tasks():
-    return ["coming soon"]
+    tasks = get_tasks()
+    return tasks
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     app.run(debug=True)

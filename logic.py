@@ -1,7 +1,7 @@
-tasks = []
+tasks = [{'id': 1, 'title': 'Task 1', 'completed': False}]
 
 def get_tasks():
-    pass
+    return tasks
 def add_task(title):
     pass
 def toggle_task(id):
