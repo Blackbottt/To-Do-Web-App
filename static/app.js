@@ -3,6 +3,8 @@ async function loadTasks() {
     const tasks = await response.json();
     console.log("1", tasks);
     const taskList = document.getElementById('task-list');
+    const taskForm = document.getElementById('task-form');
+    const task = document.getElementById('task-title');
     taskList.innerHTML = '';
     
     tasks.forEach(task => {
