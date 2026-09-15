@@ -10,6 +10,9 @@ async function loadTasks() {
     
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
+        taskItem.addEventListener('click', () => {
+            toggleTask(task.task_id);
+        });
         if (task.completed) {
             taskItem.classList.add('completed');
         }
@@ -48,7 +51,6 @@ async function toggleTask(taskId) {
     
     loadTasks();
 }
-
 
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
