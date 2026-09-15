@@ -20,5 +20,10 @@ def create_task_route():
 def get_tasks_route():
     return logic.get_tasks()
 
+@app.route("/tasks/<int:task_id>/toggle", methods=["POST"])
+def toggle_task_route(task_id):
+    logic.toggle_task(task_id)
+    return {"message": "Task toggled successfully"}, 200
+
 if __name__ == "__main__":
     app.run(debug=True)
