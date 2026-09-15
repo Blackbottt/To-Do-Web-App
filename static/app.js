@@ -22,7 +22,7 @@ async function loadTasks() {
     });
 }
 
-await loadTasks();
+loadTasks();
 
 async function addTask() {
     const taskTitle = taskTitleInput.value.trim();
