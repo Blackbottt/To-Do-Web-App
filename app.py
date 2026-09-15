@@ -22,10 +22,18 @@ def get_tasks_route():
 
 @app.route("/tasks/<int:task_id>/toggle", methods=["POST"])
 def toggle_task_route(task_id):
-    toggle_task = logic.toggle_task(task_id)
-    if not toggle_task:
+    toggled_task = logic.toggle_task(task_id)
+    if not toggled_task:
         return {"error": "Task not found"}, 404
-    return toggle_task, 200
+    return toggled_task, 200
+
+@app.route("/tasks/<int:task_id>", methods=["DELETE"])
+def delete_task_route(task_id):
+    deleted_task = logic.delete_task(task_id)
+    if not deleted_task:
+        return {"error": "Task not found"}, 404
+    # return {"message": "Task deleted successfully"}, 200
+    return deleted_task, 200
 
 if __name__ == "__main__":
     app.run(debug=True)
