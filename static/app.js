@@ -1,5 +1,5 @@
 const taskForm = document.getElementById('task-form');
-const taskTitle = document.getElementById('task-title').value.trim();
+const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
 const addTaskButton = document.getElementById('add-task');
 
