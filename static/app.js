@@ -1,7 +1,6 @@
 const taskForm = document.getElementById('task-form');
 const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
-const addTaskButton = document.getElementById('add-task');
 
 async function loadTasks() {
     const response = await fetch('/tasks');
