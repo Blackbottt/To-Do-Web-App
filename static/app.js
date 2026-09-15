@@ -14,11 +14,22 @@ async function loadTasks() {
 
 loadTasks();
 
-function addTask() {
-    const taskTitle = document.getElementById('task-title').value.trim();
-    const taskForm = document.getElementById('task-form');
+// function addTask() {
+//     const taskTitle = document.getElementById('task-title').value.trim();
+//     const taskForm = document.getElementById('task-form');
 
-}
+//     if (taskTitle) {
+//         // Here you would typically send a request to your backend to add the task
+//         console.log("Adding task:", taskTitle);
+//         await fetch('/tasks', {
+//             method: 'POST',
+//             headers: {  
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({ title: taskTitle })
+//         });
+//     }
+// }
 
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
