@@ -20,6 +20,7 @@ loadTasks();
 
 
 async function addTask() {
+    const taskTitle = taskTitleInput.value.trim();
     if (taskTitle) {
         // Here you would typically send a request to your backend to add the task
         console.log("Adding task:", taskTitle);
