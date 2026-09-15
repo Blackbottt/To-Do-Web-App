@@ -30,7 +30,7 @@ def toggle_task_route(task_id):
 @app.route("/tasks/<int:task_id>", methods=["DELETE"])
 def delete_task_route(task_id):
     deleted_task = logic.delete_task(task_id)
-    if not deleted_task:
+    if deleted_task is None:
         return {"error": "Task not found"}, 404
     # return {"message": "Task deleted successfully"}, 200
     return deleted_task, 200
