@@ -21,7 +21,6 @@ async function loadTasks() {
 
 loadTasks();
 
-
 async function addTask() {
     const taskTitle = taskTitleInput.value.trim();
     if (taskTitle) {
