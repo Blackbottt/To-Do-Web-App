@@ -1,6 +1,7 @@
-async function loadTasks(params) {
+async function loadTasks() {
     const response = await fetch('/tasks');
     const tasks = await response.json();
+    console.log("1", tasks);
     const taskList = document.getElementById('task-list');
     taskList.innerHTML = '';
     
@@ -9,5 +10,8 @@ async function loadTasks(params) {
         taskItem.textContent = task.title;
         taskList.appendChild(taskItem);
     });
+    console.log("2", tasks);
+    // return tasks;
 }
 
+loadTasks();
