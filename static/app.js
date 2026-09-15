@@ -3,11 +3,6 @@ async function loadTasks() {
     const tasks = await response.json();
     console.log("1", tasks);
     const taskList = document.getElementById('task-list');
-    const taskForm = document.getElementById('task-form');
-    taskForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-    });
-    const task = document.getElementById('task-title');
     taskList.innerHTML = '';
     
     tasks.forEach(task => {
@@ -15,8 +10,12 @@ async function loadTasks() {
         taskItem.textContent = task.title;
         taskList.appendChild(taskItem);
     });
-    console.log("2", tasks);
-    // return tasks;
 }
 
 loadTasks();
+const taskForm = document.getElementById('task-form');
+const task = document.getElementById('task-title');
+
+taskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
