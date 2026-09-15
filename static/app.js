@@ -13,9 +13,14 @@ async function loadTasks() {
 }
 
 loadTasks();
-const taskForm = document.getElementById('task-form');
-const task = document.getElementById('task-title').value.trim();
+
+function addTask() {
+    const taskTitle = document.getElementById('task-title').value.trim();
+    const taskForm = document.getElementById('task-form');
+
+}
 
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    addTask();
 });
