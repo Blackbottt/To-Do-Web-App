@@ -2,10 +2,9 @@ from flask import Flask, request, render_template
 import logic
 
 app = Flask(__name__)
-
 @app.route("/")
 def home():
-    return "Hallo Blackbottt, your backend is alive"
+    return render_template("index.html")
 
 @app.route("/tasks", methods=["POST"])
 def create_task_route():
