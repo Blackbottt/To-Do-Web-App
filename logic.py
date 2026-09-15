@@ -12,4 +12,8 @@ def toggle_task(id):
             return task
     return None
 def delete_task(id):
-    pass
+    for task in tasks:
+        if task['id'] == id:
+            tasks.remove(task)
+            return task
+    return None
