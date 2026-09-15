@@ -1,8 +1,11 @@
+const taskForm = document.getElementById('task-form');
+const taskTitle = document.getElementById('task-title').value.trim();
+const taskList = document.getElementById('task-list');
+
 async function loadTasks() {
     const response = await fetch('/tasks');
     const tasks = await response.json();
     console.log("1", tasks);
-    const taskList = document.getElementById('task-list');
     taskList.innerHTML = '';
     
     tasks.forEach(task => {
@@ -14,10 +17,8 @@ async function loadTasks() {
 
 loadTasks();
 
-async function addTask() {
-    const taskTitle = document.getElementById('task-title').value.trim();
-    const taskForm = document.getElementById('task-form');
 
+async function addTask() {
     if (taskTitle) {
         // Here you would typically send a request to your backend to add the task
         console.log("Adding task:", taskTitle);
