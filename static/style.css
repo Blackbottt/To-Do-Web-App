@@ -127,4 +127,26 @@ button {
     backdrop-filter: blur(4px);
 }
 
-.mess
+.completed-tasks-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.store-button {
+    background-color: rgb(114, 201, 230);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
