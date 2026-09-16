@@ -2,7 +2,7 @@ const taskForm = document.getElementById('task-form');
 const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
 
-const tasksCompleted = function() {
+const tasksCompleted = function(tasks) {
     if (tasks) {
         if (tasks.every(task => task.completed)) {
             const allCompletedMessage = document.createElement('div');
@@ -39,7 +39,7 @@ async function loadTasks() {
         taskItem.appendChild(deleteButton);
         taskList.appendChild(taskItem);
     });
-    tasksCompleted();
+    tasksCompleted(tasks);
 }
 
 loadTasks();
@@ -69,7 +69,6 @@ async function toggleTask(taskId) {
         method: 'POST'
     });
     
-    tasksCompleted();
     await loadTasks();
 }
 
