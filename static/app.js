@@ -15,6 +15,20 @@ const tasksCompleted = function(tasks) {
             allCompletedMessage.appendChild(deleteButton);
             allCompletedMessage.appendChild(storeButton);   
             taskList.appendChild(allCompletedMessage);
+
+            deleteButton.addEventListener('click', async () => {
+                await fetch('/tasks', {
+                    method: 'DELETE'
+                });
+                await loadTasks();
+            });
+
+            storeButton.addEventListener('click', async () => {
+                await fetch('/tasks/store', {
+                    method: 'POST'
+                });
+                await loadTasks();
+            });
         };
     }
 };
