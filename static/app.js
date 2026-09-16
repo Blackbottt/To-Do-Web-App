@@ -9,7 +9,7 @@ const tasksCompleted = async function(tasks) {
     const deleteButton = document.createElement('button');
     const storeButton = document.createElement('button');
 
-    allCompletedMessage.classList.add('all-completed-message');
+    allCompletedMessage.classList.add('all-completed-message', 'show');
     message.classList.add('message');
     buttons.classList.add('completed-tasks-buttons');
     deleteButton.classList.add('delete-button');
