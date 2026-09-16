@@ -59,6 +59,15 @@ async function toggleTask(taskId) {
     await loadTasks();
 }
 
+async function deleteTask(taskId) {
+    // Here you would typically send a request to your backend to delete the task
+    console.log("Deleting task:", taskId);  
+    await fetch(`/tasks/${taskId}`, {
+        method: 'DELETE'
+    });
+    await loadTasks();
+}
+
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     await addTask();
