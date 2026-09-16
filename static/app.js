@@ -4,7 +4,12 @@ const taskList = document.getElementById('task-list');
 
 const tasksCompleted = function() {
     if (tasks) {
-        tasks.every(task => task.completed) ? console.log("All tasks completed!") : console.log("There are still tasks to complete.");
+        if (tasks.every(task => task.completed)) {
+            const allCompletedMessage = document.createElement('div');
+            allCompletedMessage.textContent = 'All tasks completed!';
+            allCompletedMessage.classList.add('all-completed-message');
+            taskList.appendChild(allCompletedMessage);
+        };
     }
 };
 
@@ -34,6 +39,7 @@ async function loadTasks() {
         taskItem.appendChild(deleteButton);
         taskList.appendChild(taskItem);
     });
+    tasksCompleted();
 }
 
 loadTasks();
