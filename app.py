@@ -3,6 +3,15 @@ import logic
 import json
 import os
 
+def load_tasks_from_file():
+    if os.path.exists('tasks.json'):
+        with open('tasks.json', 'r') as f:
+            data = json.load(f)
+            logic.tasks = data.get('tasks', [])
+            logic.list_of_tasks = data.get('list_of_tasks', [])
+
+load_tasks_from_file()
+
 app = Flask(__name__)
 @app.route("/")
 def home():
