@@ -6,7 +6,7 @@ const tasksCompleted = function(tasks) {
     if (tasks) {
         if (tasks.every(task => task.completed)) {
             const allCompletedMessage = document.createElement('div');
-            allCompletedMessage.textContent = 'All tasks completed!';
+            allCompletedMessage.textContent = 'All tasks completed! \nWould you like to store the List or Delete it?';
             allCompletedMessage.classList.add('all-completed-message');
             taskList.appendChild(allCompletedMessage);
         };
