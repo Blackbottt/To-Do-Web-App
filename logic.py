@@ -1,3 +1,4 @@
+taskLists = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
 tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 
 def get_tasks():
