@@ -14,6 +14,8 @@ const tasksCompleted = function(tasks) {
             allCompletedMessage.classList.add('all-completed-message');
             message.classList.add('message');
             buttons.classList.add('completed-tasks-buttons');
+            deleteButton.classList.add('delete-button');
+            storeButton.classList.add('store-button');
             message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             deleteButton.textContent = 'Delete List';   
             storeButton.textContent = 'Store List'; 
