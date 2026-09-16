@@ -13,9 +13,8 @@ const tasksCompleted = async function(tasks) {
     buttons.classList.add('completed-tasks-buttons');
     deleteButton.classList.add('delete-button');
     storeButton.classList.add('store-button');
+    console.log("2", tasks);
     
-    if (tasks) {
-        console.log("2", tasks);
         if (tasks.every(task => task.completed) && tasks.length > 0) {
             allCompletedMessage.classList.add('all-completed-message');
             message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
@@ -44,7 +43,6 @@ const tasksCompleted = async function(tasks) {
                 await loadTasks();
             });
         };
-    }
 };
 
 async function loadTasks() {
