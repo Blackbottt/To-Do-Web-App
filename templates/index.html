@@ -8,11 +8,20 @@
     <script src="/static/app.js" defer></script>
 </head>
 <body>
-    <h1>Glass Tasks</h1>
-    <form id="task-form">
+    <main class="App-Shell">
+        <h1>Glass Tasks</h1>
+        <form id="task-form">
+            <label for="task-title">New Task:</label>
+            <input 
+            type="text" 
+            name="task" 
+            id="task-title" 
+            placeholder="Enter your task here" 
+            required
+            >
+            <button type="submit" id="add-task">Add Task</button>
+        </form>
         <section id="task-list"></section>
-        text: <input type="text" name="task" id="task-title" placeholder="Enter your task here" required>
-        <button type="submit" id="add-task">Add Task</button>
-    </form>
+    </main>
 </body>
 </html>
