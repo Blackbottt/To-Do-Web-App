@@ -29,7 +29,7 @@ const tasksCompleted = async function(tasks) {
             taskList.appendChild(allCompletedMessage);
 
             deleteButton.addEventListener('click', async () => {
-                await fetch('/tasks', {
+                await fetch('/tasks/delete', {
                     method: 'DELETE'
                 });
                 allCompletedMessage.classList.add('all-completed-message-hidden');
