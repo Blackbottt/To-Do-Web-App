@@ -2,6 +2,11 @@ const taskForm = document.getElementById('task-form');
 const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
 
+const tasksCompleted = function() {
+    if (tasks) {
+        tasks.every(task => task.completed) ? console.log("All tasks completed!") : console.log("There are still tasks to complete.");
+    }
+};
 
 async function loadTasks() {
     const response = await fetch('/tasks');
@@ -58,6 +63,7 @@ async function toggleTask(taskId) {
         method: 'POST'
     });
     
+    tasksCompleted();
     await loadTasks();
 }
 
