@@ -34,5 +34,10 @@ def delete_task_route(task_id):
     # return {"message": "Task deleted successfully"}, 200
     return deleted_task, 200
 
+@app.route("/tasks", methods=["DELETE"])
+def delete_all_tasks_route():
+    logic.delete_all_tasks()
+    return {"message": "All tasks deleted successfully"}, 200       
+
 if __name__ == "__main__":
     app.run(debug=True)
