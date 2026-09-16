@@ -105,3 +105,17 @@ button {
     border-radius: 0.5rem;
     cursor: pointer;
 }
+
+.all-completed-message {
+    text-align: center;
+    font-weight: bold;
+    color: #fbfcfb;
+    margin-top: 1rem;
+    width: min(100%, 36rem);
+    padding: clamp(1.25rem, 5vw, 2rem);
+    border-radius: clamp(1rem, 4vw, 1.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+}
