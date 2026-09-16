@@ -12,7 +12,7 @@ def add_task(title):
         task_id = 1
     else:
         task_id = max(task['task_id'] for task in tasks) + 1
-        tasks.append({'task_id': task_id, 'title': title, 'completed': False})
+    tasks.append({'task_id': task_id, 'title': title, 'completed': False})
     return tasks
 
 def add_task_list(title):
