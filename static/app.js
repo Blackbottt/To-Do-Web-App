@@ -19,6 +19,7 @@ const tasksCompleted = function(tasks) {
             storeButton.textContent = 'Store List'; 
             buttons.appendChild(deleteButton);
             buttons.appendChild(storeButton);
+            allCompletedMessage.appendChild(message);
             allCompletedMessage.appendChild(buttons);
             taskList.appendChild(allCompletedMessage);
 
