@@ -1,9 +1,7 @@
 const taskForm = document.getElementById('task-form');
 const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
-const deleteButton = document.createElement('button');
-deleteButton.textContent = 'Delete';
-deleteButton.classList.add('delete-task');
+
 
 async function loadTasks() {
     const response = await fetch('/tasks');
