@@ -13,7 +13,9 @@ async function loadTasks() {
     
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
-        console.log("deleteButton", deleteButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete-task');
         taskItem.appendChild(deleteButton);
         taskItem.addEventListener('click', async () => {
             await toggleTask(task.task_id);
