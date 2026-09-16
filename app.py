@@ -41,6 +41,7 @@ def delete_all_tasks_route():
 
 @app.route("/tasks/store", methods=["POST"])  
 def store_tasks_route():
+    logic.add_task_list("Stored List")
     return {"message": "Tasks stored successfully"}, 200
 
 if __name__ == "__main__":
