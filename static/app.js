@@ -9,14 +9,15 @@ const tasksCompleted = async function(tasks) {
     const deleteButton = document.createElement('button');
     const storeButton = document.createElement('button');
 
-    allCompletedMessage.classList.add('all-completed-message');
     message.classList.add('message');
     buttons.classList.add('completed-tasks-buttons');
     deleteButton.classList.add('delete-button');
     storeButton.classList.add('store-button');
     
     if (tasks) {
-        if (tasks.every(task => task.completed)) {
+        console.log("2", tasks);
+        if (tasks.every(task => task.completed) && tasks.length > 0) {
+            allCompletedMessage.classList.add('all-completed-message');
             message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             deleteButton.textContent = 'Delete List';   
             storeButton.textContent = 'Store List'; 
