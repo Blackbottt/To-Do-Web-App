@@ -1,19 +1,27 @@
-taskLists = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
+list_of_tasks = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
 tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 
 def get_tasks():
     return tasks
 
 def get_task_lists():
-    return taskLists
+    return list_of_tasks
 
 def add_task(title):
     if not tasks:
         task_id = 1
     else:
         task_id = max(task['task_id'] for task in tasks) + 1
-    tasks.append({'task_id': task_id, 'title': title, 'completed': False})
+        tasks.append({'task_id': task_id, 'title': title, 'completed': False})
     return tasks
+
+def add_task_list(title):
+    if not taskLists:
+        list_id = 1
+    else:
+        list_id = max(task_list['list_id'] for task_list in taskLists) + 1
+        taskLists.append({'list_id': list_id, 'title': title, 'tasks': []})
+    return taskLists
 
 def toggle_task(task_id):
     for task in tasks:
