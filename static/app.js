@@ -14,9 +14,6 @@ async function loadTasks() {
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('delete-task');
-        taskItem.appendChild(deleteButton);
         taskItem.addEventListener('click', async () => {
             await toggleTask(task.task_id);
         });
@@ -24,7 +21,10 @@ async function loadTasks() {
             taskItem.classList.add('completed');
         }
         taskItem.classList.add('task-item');
+        deleteButton.classList.add('delete-task');
         taskItem.textContent = task.title;
+        deleteButton.textContent = 'Delete';
+        taskItem.appendChild(deleteButton);
         taskList.appendChild(taskItem);
     });
 }
