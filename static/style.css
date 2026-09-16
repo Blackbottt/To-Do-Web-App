@@ -106,7 +106,7 @@ button {
     cursor: pointer;
 }
 
-.all-completed-message {
+.all-completed-message.show {
     position: fixed;
     top: 0;
     bottom: 0;
