@@ -125,10 +125,11 @@ button {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(4px);
+    visibility: visible;
 }
 
-.all-completed-message.hidden {
-    display: none;
+.all-completed-message-hidden {
+    visibility: hidden;
 }
 
 .completed-tasks-buttons {
