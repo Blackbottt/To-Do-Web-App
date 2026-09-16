@@ -41,7 +41,11 @@ def delete_all_tasks_route():
 
 @app.route("/tasks/store", methods=["POST"])  
 def store_tasks_route():
-    logic.add_task_list("Stored List")
+    data = request.get_json()
+    title = data.get("title")
+    if not title:
+        return {"error": "Title is required"}, 400
+    logic.add_task_list(title)
     return {"message": "Tasks stored successfully"}, 200
 
 if __name__ == "__main__":
