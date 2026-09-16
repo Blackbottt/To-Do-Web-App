@@ -3,15 +3,18 @@ const taskTitleInput = document.getElementById('task-title');
 const taskList = document.getElementById('task-list');
 
 const tasksCompleted = function(tasks) {
+    const allCompletedMessage = document.createElement('div');
+    const message = document.createElement('p');
+    const buttons = document.createElement('div');
+    const deleteButton = document.createElement('button');
+    const storeButton = document.createElement('button');
+
     if (tasks) {
         if (tasks.every(task => task.completed)) {
-            const allCompletedMessage = document.createElement('div');
-            const message = document.createElement('p');
-            const buttons = document.createElement('div');
-            const deleteButton = document.createElement('button');
-            const storeButton = document.createElement('button');
-            message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             allCompletedMessage.classList.add('all-completed-message');
+            message.classList.add('message');
+            buttons.classList.add('completed-tasks-buttons');
+            message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             deleteButton.textContent = 'Delete List';   
             storeButton.textContent = 'Store List'; 
             buttons.appendChild(deleteButton);
