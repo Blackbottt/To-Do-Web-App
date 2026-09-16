@@ -31,7 +31,7 @@ const tasksCompleted = async function(tasks) {
                 await fetch('/tasks', {
                     method: 'DELETE'
                 });
-                allCompletedMessage.classList.remove('hidden');
+                allCompletedMessage.classList.add('all-completed-message-hidden');
                 await loadTasks();
             });
 
@@ -39,7 +39,7 @@ const tasksCompleted = async function(tasks) {
                 await fetch('/tasks/store', {
                     method: 'POST'
                 });
-                allCompletedMessage.classList.remove('hidden');
+                allCompletedMessage.classList.add('all-completed-message-hidden');
                 await loadTasks();
             });
         };
