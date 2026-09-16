@@ -7,11 +7,13 @@ const tasksCompleted = function(tasks) {
         if (tasks.every(task => task.completed)) {
             const allCompletedMessage = document.createElement('div');
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete List';   
             const storeButton = document.createElement('button');
-            storeButton.textContent = 'Store List'; 
             allCompletedMessage.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             allCompletedMessage.classList.add('all-completed-message');
+            deleteButton.textContent = 'Delete List';   
+            storeButton.textContent = 'Store List'; 
+            allCompletedMessage.appendChild(deleteButton);
+            allCompletedMessage.appendChild(storeButton);   
             taskList.appendChild(allCompletedMessage);
         };
     }
