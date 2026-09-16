@@ -16,12 +16,12 @@ def add_task(title):
     return tasks
 
 def add_task_list(title):
-    if not taskLists:
+    if not list_of_tasks:
         list_id = 1
     else:
-        list_id = max(task_list['list_id'] for task_list in taskLists) + 1
-        taskLists.append({'list_id': list_id, 'title': title, 'tasks': []})
-    return taskLists
+        list_id = max(task_list['list_id'] for task_list in list_of_tasks) + 1
+        list_of_tasks.append({'list_id': list_id, 'title': title, 'tasks': []})
+    return list_of_tasks
 
 def toggle_task(task_id):
     for task in tasks:
