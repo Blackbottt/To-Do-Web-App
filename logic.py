@@ -4,6 +4,9 @@ tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 def get_tasks():
     return tasks
 
+def get_task_lists():
+    return taskLists
+
 def add_task(title):
     if not tasks:
         task_id = 1
