@@ -17,6 +17,10 @@ async function loadTasks() {
         taskItem.addEventListener('click', async () => {
             await toggleTask(task.task_id);
         });
+        deleteButton.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            await deleteTask(task.task_id);
+        });
         if (task.completed) {
             taskItem.classList.add('completed');
         }
