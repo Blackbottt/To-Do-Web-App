@@ -9,7 +9,7 @@ const tasksCompleted = async function(tasks) {
     const deleteButton = document.createElement('button');
     const storeButton = document.createElement('button');
 
-    allCompletedMessage.classList.add('all-completed-message', 'show');
+    allCompletedMessage.classList.add('all-completed-message');
     message.classList.add('message');
     buttons.classList.add('completed-tasks-buttons');
     deleteButton.classList.add('delete-button');
@@ -31,7 +31,7 @@ const tasksCompleted = async function(tasks) {
                 await fetch('/tasks', {
                     method: 'DELETE'
                 });
-                allCompletedMessage.classList.remove('show');
+                allCompletedMessage.classList.remove('hidden');
                 await loadTasks();
             });
 
@@ -39,7 +39,7 @@ const tasksCompleted = async function(tasks) {
                 await fetch('/tasks/store', {
                     method: 'POST'
                 });
-                allCompletedMessage.classList.remove('show');
+                allCompletedMessage.classList.remove('hidden');
                 await loadTasks();
             });
         };
