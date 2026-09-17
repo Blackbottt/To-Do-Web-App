@@ -6,11 +6,14 @@ import os
 def load_tasks_from_file():
     global tasks, list_of_tasks
 
-    if os.path.exists('tasks.json'):
-        with open('tasks.json', 'r') as f:
-            data = json.load(f)
-            tasks = data.get('tasks', [])
-            list_of_tasks = data.get('list_of_tasks', [])
+    if not os.path.exists('tasks.json'):
+        tasks = []
+        list_of_tasks = []
+        
+    with open('tasks.json', 'r') as f:
+        data = json.load(f)
+        tasks = data.get('tasks', [])
+        list_of_tasks = data.get('list_of_tasks', [])
 
 def save_tasks_to_file():
     data = {
