@@ -4,10 +4,11 @@ import json
 import os
 
 def load_tasks_from_file():
+    global tasks, list_of_tasks
+
     if os.path.exists('tasks.json'):
         with open('tasks.json', 'r') as f:
             data = json.load(f)
-            global tasks, list_of_tasks
             tasks = data.get('tasks', [])
             list_of_tasks = data.get('list_of_tasks', [])
 
