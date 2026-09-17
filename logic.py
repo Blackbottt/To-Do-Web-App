@@ -11,6 +11,14 @@ def load_tasks_from_file():
             tasks = data.get('tasks', [])
             list_of_tasks = data.get('list_of_tasks', [])
 
+def save_tasks_to_file():
+    data = {
+        'tasks': tasks,
+        'list_of_tasks': list_of_tasks
+    }
+    with open('tasks.json', 'w') as f:
+        json.dump(data, f, indent=4)
+
 def get_tasks():
     return tasks
 
