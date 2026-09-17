@@ -1,6 +1,14 @@
 list_of_tasks = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
 tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 
+def load_tasks_from_file():
+    if os.path.exists('tasks.json'):
+        with open('tasks.json', 'r') as f:
+            data = json.load(f)
+            global tasks, list_of_tasks
+            tasks = data.get('tasks', [])
+            list_of_tasks = data.get('list_of_tasks', [])
+
 def get_tasks():
     return tasks
 
