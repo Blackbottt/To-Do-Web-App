@@ -9,11 +9,13 @@ def load_tasks_from_file():
     if not os.path.exists('tasks.json'):
         tasks = []
         list_of_tasks = []
-        
+        return
+    
     with open('tasks.json', 'r') as f:
         data = json.load(f)
-        tasks = data.get('tasks', [])
-        list_of_tasks = data.get('list_of_tasks', [])
+        
+    tasks = data.get('tasks', [])
+    list_of_tasks = data.get('list_of_tasks', [])
 
 def save_tasks_to_file():
     data = {
