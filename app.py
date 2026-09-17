@@ -51,4 +51,5 @@ def store_tasks_route():
     return {"message": "Tasks stored successfully"}, 200
 
 if __name__ == "__main__":
+    logic.load_tasks_from_file()
     app.run(debug=True)
