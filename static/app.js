@@ -15,7 +15,6 @@ const tasksCompleted = async function(tasks) {
     storeButton.classList.add('store-button');
     console.log("2", tasks);
     
-        if (tasks.every(task => task.completed) && tasks.length > 0) {
             allCompletedMessage.classList.add('all-completed-message');
             message.textContent = 'All tasks completed!\n Would you like to store the List or Delete it?';
             deleteButton.textContent = 'Delete List';   
@@ -31,18 +30,27 @@ const tasksCompleted = async function(tasks) {
                 await fetch('/tasks/delete', {
                     method: 'DELETE'
                 });
+                console.log("Deleted all tasks");
                 allCompletedMessage.classList.add('all-completed-message-hidden');
                 await loadTasks();
             });
 
             storeButton.addEventListener('click', async () => {
+                const taskListTitle = prompt("Enter a title for the stored task list:");
+                if (!taskListTitle) {
+                    return;
+                }
                 await fetch('/tasks/store', {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ title: taskListTitle })
                 });
+                console.log("Stored task list with title:", taskListTitle);
                 allCompletedMessage.classList.add('all-completed-message-hidden');
                 await loadTasks();
             });
-        };
 };
 
 async function loadTasks() {
@@ -50,6 +58,10 @@ async function loadTasks() {
     const tasks = await response.json();
     console.log("1", tasks);
     taskList.innerHTML = '';
+
+    if (tasks.every(task => task.completed) && tasks.length > 0) {
+        tasksCompleted(tasks);
+    };
     
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
@@ -71,7 +83,6 @@ async function loadTasks() {
         taskItem.appendChild(deleteButton);
         taskList.appendChild(taskItem);
     });
-    tasksCompleted(tasks);
 }
 
 loadTasks();
