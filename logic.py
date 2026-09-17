@@ -1,5 +1,7 @@
 list_of_tasks = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
 tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
+import json
+import os
 
 def load_tasks_from_file():
     if os.path.exists('tasks.json'):
