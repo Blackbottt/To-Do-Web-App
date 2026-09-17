@@ -1,5 +1,5 @@
-list_of_tasks = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
-tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
+# list_of_tasks = [{'list_id': 1, 'title': 'List 1', 'tasks': []}]
+# tasks = [{'task_id': 1, 'title': 'Task 1', 'completed': False}]
 import json
 import os
 
@@ -42,7 +42,7 @@ def add_task_list(title):
         list_id = 1
     else:
         list_id = max(task_list['list_id'] for task_list in list_of_tasks) + 1
-    list_of_tasks.append({'list_id': list_id, 'title': title, 'tasks': []})
+    list_of_tasks.append({'list_id': list_id, 'title': title, 'tasks': tasks})
     save_tasks_to_file()
     return list_of_tasks
 
