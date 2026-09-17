@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template
 import logic
-import json
-import os
 
 logic.load_tasks_from_file()
 
